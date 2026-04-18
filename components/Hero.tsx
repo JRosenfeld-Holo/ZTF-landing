@@ -112,9 +112,13 @@ export default function Hero({ onOpenQuiz }: { onOpenQuiz: () => void }) {
       style={{ background: '#FFFFFF' }}>
       <NebulaCanvas />
 
-      {/* Radial scrim — lightens center for text legibility, lets nebula show at edges */}
-      <div className="absolute inset-0 pointer-events-none"
+      {/* Desktop radial scrim — lightens center for text legibility */}
+      <div className="hidden sm:block absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse 75% 65% at 50% 50%, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.55) 40%, rgba(255,255,255,0.1) 75%, transparent 100%)' }} />
+
+      {/* Mobile mask — heavier wash to ensure text legibility against scroll motion */}
+      <div className="block sm:hidden absolute inset-0 pointer-events-none"
+        style={{ background: 'rgba(255, 255, 255, 0.82)' }} />
 
       {/* Fade nebula into the white page below */}
       <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
