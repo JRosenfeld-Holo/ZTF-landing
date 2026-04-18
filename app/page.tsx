@@ -39,6 +39,7 @@ function ScrollProgress() {
 export default function Page() {
   const [quizOpen, setQuizOpen] = useState(false)
   const [seatsRemaining, setSeatsRemaining] = useState(28)
+  const [showMobileCta, setShowMobileCta] = useState(false)
 
   // Social proof: simulate a registration after 60 seconds
   useEffect(() => {
@@ -52,6 +53,18 @@ export default function Page() {
     return () => clearTimeout(timer)
   }, [])
 
+  // Track scroll position to toggle mobile CTA past hero
+  useEffect(() => {
+    const onScroll = () => {
+      const hero = document.getElementById('hero')
+      if (hero) {
+        setShowMobileCta(window.scrollY > hero.offsetHeight - 50)
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <>
@@ -97,7 +110,7 @@ export default function Page() {
       {quizOpen && <QuizModal onClose={() => setQuizOpen(false)} />}
 
       {/* Mobile sticky CTA */}
-      <div className="mobile-cta-bar md:hidden">
+      <div className={`mobile-cta-bar md:hidden transition-transform duration-300 ${showMobileCta ? 'translate-y-0' : 'translate-y-[150%]'}`}>
         {/* Urgency copy */}
         <div className="flex-1 min-w-0">
           <p className="text-xs font-semibold font-display" style={{ color: '#3B82F6' }}>
