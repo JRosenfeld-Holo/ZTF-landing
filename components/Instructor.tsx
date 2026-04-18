@@ -66,7 +66,7 @@ export default function Instructor() {
           <div className="glass rounded-[23px] p-6 sm:p-8 md:p-12 flex flex-col md:flex-row gap-10 items-start">
 
             {/* Left — avatar + status */}
-            <div className="flex-shrink-0 flex flex-col items-center gap-5 md:w-44">
+            <div className="flex-shrink-0 flex flex-col items-center gap-5 self-center md:self-start md:w-44">
               <div className="w-36 h-36 rounded-2xl overflow-hidden relative"
                 style={{ border: '1px solid rgba(37,99,235,0.2)' }}>
                 <Image
@@ -88,8 +88,8 @@ export default function Instructor() {
 
             {/* Right — bio + credentials */}
             <div className="flex-1 min-w-0">
-              <h3 className="font-display font-bold text-2xl mb-0.5" style={{ color: '#0A2540' }}>Jonathan Rosenfeld</h3>
-              <p className="font-medium mb-6 text-sm" style={{ color: '#3B82F6' }}>AI Implementation Consultant</p>
+              <h3 className="font-display font-bold text-2xl mb-0.5 text-center md:text-left" style={{ color: '#0A2540' }}>Jonathan Rosenfeld</h3>
+              <p className="font-medium mb-6 text-sm text-center md:text-left" style={{ color: '#3B82F6' }}>AI Implementation Consultant</p>
 
               <div className="space-y-4 text-sm leading-relaxed mb-8" style={{ color: '#425466' }}>
                 <p>Jonathan has spent the last 5+ years implementing AI systems inside real businesses — from solo consultants to 50-person firms across DFW. He&apos;s not an academic. He&apos;s a practitioner who&apos;s seen firsthand what works when small business owners try to adopt AI.</p>
