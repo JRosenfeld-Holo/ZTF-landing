@@ -126,7 +126,7 @@ export default function Hero({ onOpenQuiz }: { onOpenQuiz: () => void }) {
       <div className="relative z-10 max-w-3xl mx-auto text-center">
 
         {/* Live badge */}
-        <div className="inline-flex items-center gap-2.5 px-3 sm:px-4 py-2 rounded-full mb-5 text-sm"
+        <div className="hidden sm:inline-flex items-center gap-2.5 px-3 sm:px-4 py-2 rounded-full mb-5 text-sm"
           style={{ background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.15)', backdropFilter: 'blur(12px)' }}>
           <span className="relative flex h-2 w-2 flex-shrink-0">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75" />
