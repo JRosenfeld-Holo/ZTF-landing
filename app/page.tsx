@@ -17,7 +17,7 @@ import FinalCTA from '@/components/FinalCTA'
 import QuizModal from '@/components/QuizModal'
 import QuoteSection from '@/components/QuoteSection'
 import AIStats from '@/components/AIStats'
-import PressSection from '@/components/PressSection'
+import EmailCapture from '@/components/EmailCapture'
 import ToastRegion, { showToast } from '@/components/Toast'
 
 function ScrollProgress() {
@@ -70,18 +70,18 @@ export default function Page() {
       <ScrollProgress />
       <Header onOpenQuiz={() => setQuizOpen(true)} />
 
-      <main>
+      <main className="pb-20 md:pb-0">
         <Hero onOpenQuiz={() => setQuizOpen(true)} />
         <ToolsCarousel />
         <Problem />
         <QuoteSection />
         <Solution />
         <AIStats />
-        <PressSection />
         <Instructor />
         <Curriculum />
         <WhoIsThisFor />
         <ValueAndPricing onOpenQuiz={() => setQuizOpen(true)} seatsRemaining={seatsRemaining} />
+        <EmailCapture />
         <Community />
         <FAQ />
         <Venue />
@@ -131,7 +131,7 @@ export default function Page() {
           <a href="https://buy.stripe.com/placeholder" target="_blank" rel="noopener noreferrer"
             className="font-display font-bold text-xs text-white py-2.5 px-4 rounded-lg"
             style={{ background: 'linear-gradient(135deg,#2563EB,#06B6D4)', boxShadow: '0 2px 12px rgba(37,99,235,0.35)' }}>
-            Reserve — $697
+            Reserve My Seat
           </a>
         </div>
       </div>

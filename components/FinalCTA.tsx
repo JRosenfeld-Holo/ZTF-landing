@@ -18,12 +18,12 @@ export default function FinalCTA({ onOpenQuiz }: { onOpenQuiz: () => void }) {
 
         <h2 className="font-display font-bold mb-6 leading-tight"
           style={{ fontSize: 'clamp(32px,5.5vw,60px)', letterSpacing: '-0.03em', color: '#FFFFFF' }}>
-          The Gap Is Growing.<br />
-          <span style={{ color: '#FFFFFF', textShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>Don&apos;t Get Left Behind.</span>
+          48 Hours to Change<br />
+          <span style={{ color: '#38BDF8' }}>How You Work Forever.</span>
         </h2>
 
         <p className="text-lg leading-relaxed mb-12 max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.7)' }}>
-          Every month you wait, your AI-adopting competitors pull further ahead. In two days, you could have the skills, the workflows, and the 90-day plan to catch up — and leap past them.
+          Walk out of Frisco with live workflows already running, a personalized 90-day AI plan in hand, and the confidence your competitors are still trying to build. Two days. That&apos;s the distance between where you are and where you want to be.
         </p>
 
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-center mb-8">

@@ -20,9 +20,9 @@ const INSTRUCTORS = [
     photo: null,
     initials: 'S',
     gradient: 'linear-gradient(135deg, #2563EB 0%, #06B6D4 100%)',
-    bio: 'Sundar brings deep technical expertise in AI workflows and automation. He specializes in helping teams rapidly adopt AI tools and build production-grade integrations.',
+    bio: 'AI workflow specialist and automation expert. Full bio and photo coming soon.',
     tags: ['Gemini', 'Zapier', 'Automation'],
-    available: true,
+    available: false,
     location: 'DFW, TX',
   },
   {
@@ -31,9 +31,9 @@ const INSTRUCTORS = [
     photo: null,
     initials: 'BC',
     gradient: 'linear-gradient(135deg, #0EA5E9 0%, #2563EB 100%)',
-    bio: 'Brian is a growth strategist and AI educator who has taught thousands of students across Udemy, Maven, and university programs. He specializes in helping non-technical business owners leverage AI for marketing, sales, and operational efficiency.',
+    bio: 'Growth strategist and AI educator. Full bio and credentials coming soon.',
     tags: ['AI Strategy', 'Growth Marketing', 'Perplexity'],
-    available: true,
+    available: false,
     location: 'DFW, TX',
   },
 ]
@@ -54,7 +54,7 @@ export default function Instructor() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {INSTRUCTORS.map((inst) => (
             <div key={inst.name} className="card-premium">
               <div className="glass rounded-[23px] p-6 sm:p-8 flex flex-col items-center text-center h-full">

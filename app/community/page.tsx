@@ -67,6 +67,13 @@ const benefits = [
   },
 ]
 
+const stats = [
+  { value: '40+', label: 'Workshop Graduates' },
+  { value: '12×', label: 'Office Hours / Year' },
+  { value: '100+', label: 'Prompts in Library' },
+  { value: 'DFW', label: 'Local-Only Network' },
+]
+
 const faqs = [
   {
     q: 'What happens after the first 30 days?',
@@ -118,10 +125,10 @@ export default function CommunityPage() {
 
       {/* ━━━ Nav ━━━ */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-3"
-        style={{ background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px) saturate(180%)', WebkitBackdropFilter: 'blur(16px) saturate(180%)', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+        style={{ background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(20px) saturate(180%)', WebkitBackdropFilter: 'blur(20px) saturate(180%)', borderBottom: '1px solid rgba(0,0,0,0.07)' }}>
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <a href="/">
-            <Image src="/logo-header-cropped.png" alt="Zero to Fluent" width={160} height={48} style={{ height: '32px', width: 'auto' }} />
+            <Image src="/logo-header-cropped.png" alt="Zero to Fluent" width={160} height={48} style={{ height: '30px', width: 'auto' }} />
           </a>
           <a href="/" className="text-sm font-medium flex items-center gap-1.5 transition-colors"
             style={{ color: '#425466' }}
@@ -135,21 +142,20 @@ export default function CommunityPage() {
         </div>
       </nav>
 
-      {/* ━━━ Hero — gradient bg matching homepage pattern ━━━ */}
-      <section className="relative min-h-[75vh] flex items-center justify-center pt-32 pb-20 px-4 sm:px-6 overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #22D3EE 0%, #06B6D4 35%, #0EA5E9 65%, #2563EB 100%)' }}>
-        {/* Dark scrim */}
-        <div className="absolute inset-0 pointer-events-none z-[1]" style={{ background: 'rgba(0,0,0,0.25)' }} />
-        <div className="absolute inset-0 pointer-events-none z-[2]"
-          style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%)' }} />
+      {/* ━━━ Hero — dark navy, consistent with main site ━━━ */}
+      <section className="relative min-h-[80vh] flex items-center justify-center pt-32 pb-20 px-4 sm:px-6 overflow-hidden"
+        style={{ background: 'linear-gradient(160deg, #040C18 0%, #0A1628 55%, #0D1F3C 100%)' }}>
+        {/* Subtle top glow */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(37,99,235,0.2) 0%, transparent 70%)' }} />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 text-xs font-bold uppercase tracking-widest"
-            style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', color: '#FFFFFF' }}>
+            style={{ background: 'rgba(37,99,235,0.2)', border: '1px solid rgba(99,179,237,0.3)', color: '#93C5FD' }}>
             <span className="relative flex h-2 w-2 flex-shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: '#60A5FA' }} />
+              <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#60A5FA' }} />
             </span>
             Community Membership
           </div>
@@ -158,19 +164,17 @@ export default function CommunityPage() {
           <h1 className="font-display font-bold leading-[1.1] tracking-tight mb-5"
             style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', letterSpacing: '-0.03em', color: '#FFFFFF' }}>
             Zero to Fluent{' '}
-            <br />
-            <span style={{ color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.2)' }}>Community</span>
+            <span style={{ color: '#38BDF8' }}>Community</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg leading-relaxed max-w-xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.85)', lineHeight: '1.75' }}>
+          <p className="text-lg leading-relaxed max-w-xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.7)', lineHeight: '1.75' }}>
             Continue your AI journey after the workshop. Monthly office hours, a private DFW business network, new prompt packs every month, and peer accountability that keeps you moving.
           </p>
 
           {/* Pricing card */}
           <div className="card-premium inline-block max-w-sm w-full">
             <div className="glass rounded-[23px] overflow-hidden" style={{ background: '#FFFFFF' }}>
-              {/* Header band */}
               <div className="text-center py-2.5 text-xs font-bold uppercase tracking-[0.1em]"
                 style={{ background: 'linear-gradient(90deg, #2563EB, #0EA5E9)', color: '#FFFFFF' }}>
                 Workshop Attendee Rate
@@ -181,8 +185,12 @@ export default function CommunityPage() {
                   <span className="font-display font-bold text-6xl" style={{ color: '#0A2540' }}>$99</span>
                   <span className="text-base font-medium" style={{ color: '#697386' }}>/mo</span>
                 </div>
-                <p className="text-sm font-medium mb-1" style={{ color: '#059669' }}>
-                  <span className="mr-1">✓</span>Intro rate for your first 30 days
+                <p className="text-sm font-medium mb-1 flex items-center justify-center gap-1.5" style={{ color: '#059669' }}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="6" fill="rgba(5,150,105,0.1)"/>
+                    <path d="M4 7l2 2 4-4" stroke="#059669" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Intro rate for your first 30 days
                 </p>
                 <p className="text-xs mb-6" style={{ color: '#697386' }}>Then $199/month — cancel anytime</p>
 
@@ -197,16 +205,26 @@ export default function CommunityPage() {
             </div>
           </div>
 
-          <p className="text-xs mt-5" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            Workshop attendees: use the link in your confirmation email for automatic discount.
+          <p className="text-xs mt-5" style={{ color: 'rgba(255,255,255,0.45)' }}>
+            Workshop attendees: use the link in your confirmation email for your automatic discount.
           </p>
         </div>
       </section>
 
-      {/* ━━━ What You Get — matches homepage white sections ━━━ */}
-      <section className="relative z-10 py-16 sm:py-28 px-4 sm:px-6" style={{ background: '#FFFFFF' }}>
-        <div className="gradient-divider absolute top-0 left-0 right-0" />
+      {/* ━━━ Social proof stats strip ━━━ */}
+      <section style={{ background: '#F8FAFC', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+        <div className="max-w-3xl mx-auto px-6 py-10 grid grid-cols-2 sm:grid-cols-4 gap-6">
+          {stats.map(s => (
+            <div key={s.label} className="text-center">
+              <p className="font-display font-bold text-3xl gradient-text mb-1" style={{ letterSpacing: '-0.02em' }}>{s.value}</p>
+              <p className="text-xs font-medium" style={{ color: '#697386' }}>{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
+      {/* ━━━ What You Get ━━━ */}
+      <section className="relative z-10 py-16 sm:py-28 px-4 sm:px-6" style={{ background: '#FFFFFF' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <div className="section-label" style={{ display: 'inline-flex' }}>What You Get</div>
@@ -214,13 +232,16 @@ export default function CommunityPage() {
               style={{ fontSize: 'clamp(28px,4.5vw,48px)', letterSpacing: '-0.025em', color: '#0A2540' }}>
               Everything Included
             </h2>
+            <p className="text-base mt-3 max-w-xl mx-auto" style={{ color: '#697386' }}>
+              Six pillars designed to keep DFW business owners applying, accountable, and ahead.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {benefits.map(b => (
               <div key={b.title} className="card-premium">
                 <div className="glass rounded-[23px] p-7 h-full flex flex-col">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 flex-shrink-0"
                     style={{ background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.15)', color: '#2563EB' }}>
                     {b.icon}
                   </div>
@@ -233,21 +254,18 @@ export default function CommunityPage() {
             ))}
           </div>
         </div>
-
-        <div className="gradient-divider absolute bottom-0 left-0 right-0" />
       </section>
 
-      {/* ━━━ How It Works — inverse gradient ━━━ */}
+      {/* ━━━ How It Works — dark navy, consistent with main site ━━━ */}
       <section className="relative z-10 py-16 sm:py-28 px-4 sm:px-6 overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #2563EB 0%, #0EA5E9 35%, #06B6D4 65%, #22D3EE 100%)' }}>
-        <div className="absolute inset-0 pointer-events-none z-[1]" style={{ background: 'rgba(0,0,0,0.25)' }} />
-        <div className="absolute inset-0 pointer-events-none z-[2]"
-          style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%)' }} />
+        style={{ background: 'linear-gradient(160deg, #040C18 0%, #0A1628 55%, #0D1F3C 100%)' }}>
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37,99,235,0.18) 0%, transparent 70%)' }} />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5 text-xs font-bold uppercase tracking-widest"
-            style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)', color: '#FFFFFF' }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-white inline-block opacity-60" />
+            style={{ background: 'rgba(37,99,235,0.2)', border: '1px solid rgba(99,179,237,0.3)', color: '#93C5FD' }}>
+            <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#60A5FA' }} />
             How It Works
           </div>
           <h2 className="font-display font-bold leading-tight mb-12"
@@ -255,17 +273,17 @@ export default function CommunityPage() {
             Three Steps to Stay Ahead
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               { step: '01', title: 'Join', desc: 'Sign up and get instant access to the member forum, prompt library, and session archives.' },
               { step: '02', title: 'Engage', desc: 'Attend monthly office hours, join an accountability group, and connect with DFW peers.' },
               { step: '03', title: 'Grow', desc: 'Apply new AI skills each month. Track your progress. Stay ahead of the curve.' },
             ].map(s => (
               <div key={s.step} className="rounded-2xl p-7 text-center"
-                style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)' }}>
-                <div className="font-display font-bold text-4xl mb-3" style={{ color: 'rgba(255,255,255,0.3)' }}>{s.step}</div>
+                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <div className="font-display font-bold text-4xl mb-3 gradient-text">{s.step}</div>
                 <h3 className="font-display font-bold text-lg mb-2" style={{ color: '#FFFFFF' }}>{s.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>{s.desc}</p>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -273,7 +291,7 @@ export default function CommunityPage() {
       </section>
 
       {/* ━━━ FAQ ━━━ */}
-      <section className="relative z-10 py-16 sm:py-28 px-4 sm:px-6" style={{ background: 'rgba(246,249,252,0.85)' }}>
+      <section className="relative z-10 py-16 sm:py-28 px-4 sm:px-6" style={{ background: '#F8FAFC' }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <div className="section-label" style={{ display: 'inline-flex' }}>FAQ</div>
@@ -290,30 +308,34 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* ━━━ Final CTA — teal→blue gradient ━━━ */}
+      {/* ━━━ Final CTA — dark navy, consistent with main site ━━━ */}
       <section className="relative z-10 py-20 sm:py-32 px-4 sm:px-6 overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #22D3EE 0%, #06B6D4 35%, #0EA5E9 65%, #2563EB 100%)' }}>
-        <div className="absolute inset-0 pointer-events-none z-[1]" style={{ background: 'rgba(0,0,0,0.25)' }} />
-        <div className="absolute inset-0 pointer-events-none z-[2]"
-          style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%)' }} />
+        style={{ background: 'linear-gradient(160deg, #040C18 0%, #0A1628 55%, #0D1F3C 100%)' }}>
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 100%, rgba(37,99,235,0.2) 0%, transparent 70%)' }} />
 
         <div className="relative z-10 max-w-xl mx-auto text-center">
-          <h2 className="font-display font-bold leading-tight mb-4"
-            style={{ fontSize: 'clamp(28px,4.5vw,48px)', letterSpacing: '-0.025em', color: '#FFFFFF' }}>
+          <p className="font-semibold text-xs uppercase tracking-[0.15em] mb-5" style={{ color: '#93C5FD' }}>
             Keep the Momentum Going
+          </p>
+          <h2 className="font-display font-bold leading-tight mb-5"
+            style={{ fontSize: 'clamp(28px,4.5vw,48px)', letterSpacing: '-0.025em', color: '#FFFFFF' }}>
+            Stay Ahead of the Curve.
+            <br />
+            <span style={{ color: '#38BDF8' }}>Every Single Month.</span>
           </h2>
-          <p className="text-base leading-relaxed mb-10" style={{ color: 'rgba(255,255,255,0.85)' }}>
+          <p className="text-base leading-relaxed mb-10" style={{ color: 'rgba(255,255,255,0.65)' }}>
             The workshop gives you the foundation. The community keeps you accountable, current, and connected with DFW business owners on the same journey.
           </p>
           <a href="https://buy.stripe.com/placeholder" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 font-display font-bold text-lg text-white rounded-xl transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
-            style={{ background: '#FFFFFF', color: '#2563EB', boxShadow: '0 4px 32px rgba(0,0,0,0.2), 0 1px 4px rgba(0,0,0,0.1)', padding: '18px 40px' }}
-            onMouseOver={e => { e.currentTarget.style.boxShadow = '0 8px 48px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
-            onMouseOut={e => { e.currentTarget.style.boxShadow = '0 4px 32px rgba(0,0,0,0.2), 0 1px 4px rgba(0,0,0,0.1)'; e.currentTarget.style.transform = 'none' }}>
+            style={{ background: 'linear-gradient(135deg,#2563EB 0%,#0EA5E9 50%,#06B6D4 100%)', boxShadow: '0 0 32px rgba(37,99,235,0.45), 0 4px 16px rgba(0,0,0,0.3)', padding: '18px 40px' }}
+            onMouseOver={e => (e.currentTarget.style.boxShadow = '0 0 52px rgba(37,99,235,0.65), 0 8px 24px rgba(6,182,212,0.3), 0 4px 16px rgba(0,0,0,0.3)')}
+            onMouseOut={e => (e.currentTarget.style.boxShadow = '0 0 32px rgba(37,99,235,0.45), 0 4px 16px rgba(0,0,0,0.3)')}>
             Join for $99/month
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </a>
-          <p className="text-xs mt-4" style={{ color: 'rgba(255,255,255,0.6)' }}>Then $199/month · Cancel anytime</p>
+          <p className="text-xs mt-4" style={{ color: 'rgba(255,255,255,0.4)' }}>Then $199/month · Cancel anytime · No contracts</p>
         </div>
       </section>
 
@@ -324,7 +346,11 @@ export default function CommunityPage() {
         </div>
         <p className="text-xs" style={{ color: '#8898aa' }}>
           © 2026 Zero to Fluent. All rights reserved. ·{' '}
-          <a href="mailto:hello@zerotofluent.ai" style={{ color: '#697386' }}>hello@zerotofluent.ai</a>
+          <a href="mailto:hello@zerotofluent.ai" className="transition-colors" style={{ color: '#697386' }}
+            onMouseOver={e => (e.currentTarget.style.color = '#425466')}
+            onMouseOut={e => (e.currentTarget.style.color = '#697386')}>
+            hello@zerotofluent.ai
+          </a>
         </p>
       </footer>
     </div>

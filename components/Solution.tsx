@@ -5,7 +5,7 @@ const features = [
   {
     num: '01',
     title: 'Hands-On, Not Lecture',
-    desc: "You'll open your laptop and build real prompts from minute one. Every exercise is live — you type, AI responds, you iterate. This isn't a seminar. It's a workshop.",
+    desc: "You'll build live prompts during Day 1 alone — each one solving a task you currently do manually. Leave with working tools, not theory.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <rect x="2" y="3" width="16" height="12" rx="2" stroke="#2563EB" strokeWidth="1.5"/>
@@ -17,7 +17,7 @@ const features = [
   {
     num: '02',
     title: 'Built for Business Owners',
-    desc: 'Every exercise uses your real business scenarios — not hypothetical Fortune 500 examples. You bring your context. You leave with your solution.',
+    desc: 'Bring your actual emails, customer questions, and recurring tasks. Every exercise is solved using your business as the use case — you leave with your solution, not a template.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <path d="M3 7h14M3 7v9a1 1 0 001 1h12a1 1 0 001-1V7M3 7l2-4h10l2 4" stroke="#2563EB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -28,7 +28,7 @@ const features = [
   {
     num: '03',
     title: 'In Person, In Frisco',
-    desc: 'Face-to-face instruction in a professional conference room. Ask questions, get immediate answers, and learn alongside your DFW peers.',
+    desc: "Get stuck? An instructor is three feet away — not three days away in a support queue. Questions get answered in real time, in the room, in front of your peers.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <circle cx="7" cy="7" r="3" stroke="#2563EB" strokeWidth="1.5"/>
@@ -40,7 +40,7 @@ const features = [
   {
     num: '04',
     title: 'From Zero to Fluent',
-    desc: "We start from absolute zero. By the end of Day 2, you'll have a personalized 90-day AI implementation roadmap for your specific business.",
+    desc: "Arrive with zero AI experience. Leave with a personalized 90-day implementation plan — Week 1 quick wins, Month 2 workflows, Month 3 automation. You won't have to wonder 'what next?'",
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <path d="M4 16L10 4L16 16" stroke="#2563EB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

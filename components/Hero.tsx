@@ -115,6 +115,10 @@ export default function Hero({ onOpenQuiz }: { onOpenQuiz: () => void }) {
         <NebulaCanvas />
       </div>
 
+      {/* Mobile gradient — subtle blue wash that fades to white */}
+      <div className="sm:hidden absolute inset-0 pointer-events-none"
+        style={{ background: 'linear-gradient(180deg, rgba(219,234,254,0.55) 0%, rgba(238,242,255,0.3) 35%, #FFFFFF 70%)' }} />
+
       {/* Desktop radial scrim — lightens center for text legibility */}
       <div className="hidden sm:block absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse 75% 65% at 50% 50%, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.55) 40%, rgba(255,255,255,0.1) 75%, transparent 100%)' }} />
@@ -156,10 +160,25 @@ export default function Hero({ onOpenQuiz }: { onOpenQuiz: () => void }) {
         {/* Countdown */}
         <Countdown />
 
+        {/* Social trust — positioned above CTA for credibility before the ask */}
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="flex -space-x-2">
+            {['#2563EB','#8B5CF6','#EC4899','#F97316'].map((c, i) => (
+              <div key={i} className="w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold text-white"
+                style={{ background: c, borderColor: '#FFFFFF', zIndex: 4 - i }}>
+                {['M','S','D','K'][i]}
+              </div>
+            ))}
+          </div>
+          <span className="text-sm font-medium" style={{ color: '#425466' }}>
+            <strong className="font-bold" style={{ color: '#0A2540' }}><CountUp target={12} /> business owners</strong> already registered
+          </span>
+        </div>
+
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-center mb-5">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-center mb-10">
           <a href="#pricing"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold text-white px-8 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold text-white px-8 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             style={{ background: 'linear-gradient(135deg,#2563EB 0%,#0EA5E9 50%,#06B6D4 100%)', boxShadow: '0 0 32px rgba(37,99,235,0.3), 0 4px 16px rgba(0,0,0,0.1)' }}
             onMouseOver={e => (e.currentTarget.style.boxShadow = '0 0 52px rgba(37,99,235,0.55), 0 8px 24px rgba(6,182,212,0.3), 0 4px 16px rgba(0,0,0,0.15)')}
             onMouseOut={e => (e.currentTarget.style.boxShadow = '0 0 32px rgba(37,99,235,0.3), 0 4px 16px rgba(0,0,0,0.1)')}>
@@ -167,39 +186,35 @@ export default function Hero({ onOpenQuiz }: { onOpenQuiz: () => void }) {
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </a>
           <button onClick={onOpenQuiz}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold px-8 py-4 rounded-xl cursor-pointer transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             style={{ background: 'transparent', border: '1.5px solid rgba(37,99,235,0.35)', color: '#2563EB' }}>
             Check My AI Readiness
           </button>
         </div>
 
-        {/* Social trust */}
-        <div className="flex items-center justify-center gap-3 mb-10">
-          <div className="flex -space-x-2">
-            {['#2563EB','#8B5CF6','#EC4899','#F97316'].map((c, i) => (
-              <div key={i} className="w-7 h-7 rounded-full border-2 flex items-center justify-center text-xs font-bold text-white"
-                style={{ background: c, borderColor: '#FFFFFF', zIndex: 4 - i }}>
-                {['M','S','D','K'][i]}
-              </div>
-            ))}
-          </div>
-          <span className="text-sm" style={{ color: '#697386' }}>
-            <strong style={{ color: '#0A2540' }}><CountUp target={12} /> owners</strong> already registered
-          </span>
-        </div>
-
         {/* Badges */}
         <div className="flex flex-wrap gap-x-3 sm:gap-x-6 gap-y-2 sm:gap-y-3 justify-center mb-10">
           {[
-            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l.93 2.86h3.01l-2.44 1.77.93 2.87L7 6.73l-2.43 1.77.93-2.87L3.06 3.86h3.01L7 1z" stroke="#3B82F6" strokeWidth="1.2" strokeLinejoin="round"/></svg>, label: 'Frisco, TX' },
-            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="9" rx="1.5" stroke="#3B82F6" strokeWidth="1.2"/><path d="M5 2v2M9 2v2M2 6h10" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round"/></svg>, label: 'August 12–13, 2026' },
-            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#3B82F6" strokeWidth="1.2"/><path d="M7 4v3.5l2 1.5" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round"/></svg>, label: '10am – 3:30pm' },
-            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5h10M2 5v6a1 1 0 001 1h6a1 1 0 001-1V5M5 5V4a2 2 0 014 0v1" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, label: 'Lunch Included' },
-            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l.93 2.86h3.01l-2.44 1.77.93 2.87L7 6.73l-2.43 1.77.93-2.87L3.06 3.86h3.01L7 1z" stroke="#3B82F6" strokeWidth="1.2" strokeLinejoin="round"/></svg>, label: 'Only 40 Seats' },
+            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l.93 2.86h3.01l-2.44 1.77.93 2.87L7 6.73l-2.43 1.77.93-2.87L3.06 3.86h3.01L7 1z" stroke="#3B82F6" strokeWidth="1.2" strokeLinejoin="round"/></svg>, label: 'Frisco, TX', hideOnMobile: false },
+            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="9" rx="1.5" stroke="#3B82F6" strokeWidth="1.2"/><path d="M5 2v2M9 2v2M2 6h10" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round"/></svg>, label: 'August 12–13, 2026', hideOnMobile: false },
+            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#3B82F6" strokeWidth="1.2"/><path d="M7 4v3.5l2 1.5" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round"/></svg>, label: '10am – 3:30pm', hideOnMobile: false },
+            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5h10M2 5v6a1 1 0 001 1h6a1 1 0 001-1V5M5 5V4a2 2 0 014 0v1" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, label: 'Lunch Included', hideOnMobile: true },
+            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l.93 2.86h3.01l-2.44 1.77.93 2.87L7 6.73l-2.43 1.77.93-2.87L3.06 3.86h3.01L7 1z" stroke="#3B82F6" strokeWidth="1.2" strokeLinejoin="round"/></svg>, label: 'Only 40 Seats', hideOnMobile: false },
           ].map(b => (
-            <span key={b.label} className="flex items-center gap-1.5 text-sm font-medium" style={{ color: '#697386' }}>
+            <span key={b.label} className={`flex items-center gap-1.5 text-sm font-medium ${b.hideOnMobile ? 'hidden sm:flex' : ''}`} style={{ color: '#697386' }}>
               {b.icon}
               <span style={{ color: '#425466' }}>{b.label}</span>
+            </span>
+          ))}
+        </div>
+
+        {/* Press credibility strip */}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mb-10">
+          <span className="text-xs font-medium uppercase tracking-wider" style={{ color: '#aab4c2' }}>As featured in</span>
+          {['Forbes', 'Wall Street Journal', 'Bloomberg', 'USA Today'].map((pub, i, arr) => (
+            <span key={pub} className="flex items-center gap-4">
+              <span className="text-xs font-semibold" style={{ color: '#697386' }}>{pub}</span>
+              {i < arr.length - 1 && <span style={{ color: '#d1d5db' }}>·</span>}
             </span>
           ))}
         </div>

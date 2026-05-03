@@ -1,6 +1,6 @@
 'use client'
 import { useReveal } from '@/hooks/useReveal'
-import NeuralCanvas from './NeuralCanvas'
+
 
 const forList = [
   'You own or run a small business with 1–50 employees',
@@ -25,8 +25,6 @@ export default function WhoIsThisFor() {
     <section id="who" className="relative z-10 py-16 sm:py-28 px-4 sm:px-6 overflow-hidden"
       style={{ background: 'linear-gradient(160deg, #040C18 0%, #0A1628 55%, #0D1F3C 100%)' }}>
 
-      {/* Neural canvas — pops nicely on dark bg */}
-      <NeuralCanvas />
 
       {/* Subtle radial glow for depth */}
       <div className="absolute inset-0 pointer-events-none"

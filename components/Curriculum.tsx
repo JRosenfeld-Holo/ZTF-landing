@@ -12,10 +12,28 @@ type Session = {
 type Break = {
   time: string
   label: string
-  icon: string
+  icon: React.ReactNode
   break: true
 }
 type Item = Session | Break
+
+const CoffeeIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <path d="M2 4.5h8v4a3 3 0 01-3 3H5a3 3 0 01-3-3v-4z" stroke="#697386" strokeWidth="1.2"/>
+    <path d="M10 6h1a1.5 1.5 0 010 3h-1" stroke="#697386" strokeWidth="1.2" strokeLinecap="round"/>
+    <path d="M4.5 2.5c0-.8 1.5-.8 1.5-1.5" stroke="#697386" strokeWidth="1.1" strokeLinecap="round"/>
+    <path d="M6.5 2.5c0-.8 1.5-.8 1.5-1.5" stroke="#697386" strokeWidth="1.1" strokeLinecap="round"/>
+  </svg>
+)
+
+const LunchIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <path d="M4.5 1v4.5a2 2 0 01-2 2v5" stroke="#697386" strokeWidth="1.2" strokeLinecap="round"/>
+    <path d="M4.5 1H3M4.5 1H6" stroke="#697386" strokeWidth="1.2" strokeLinecap="round"/>
+    <path d="M10 1v11" stroke="#697386" strokeWidth="1.2" strokeLinecap="round"/>
+    <path d="M10 1c0 0 2 1.2 2 3s-2 3-2 3" stroke="#697386" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
 
 const days: {
   label: string
@@ -47,7 +65,7 @@ const days: {
           { text: 'Why small business owners have a MASSIVE advantage with AI right now' },
         ],
       },
-      { time: '11:15 – 11:30 AM', label: 'Coffee Break', icon: '☕', break: true },
+      { time: '11:15 – 11:30 AM', label: 'Coffee Break', icon: <CoffeeIcon />, break: true },
       {
         time: '11:30 AM – 12:30 PM',
         title: 'Session 2 — "Your First AI Conversation"',
@@ -58,7 +76,7 @@ const days: {
           { text: 'Common mistakes that make AI give you garbage (and how to fix them)' },
         ],
       },
-      { time: '12:30 – 1:30 PM', label: 'Lunch Break (Provided)', icon: '🍽️', break: true },
+      { time: '12:30 – 1:30 PM', label: 'Lunch Break (Provided)', icon: <LunchIcon />, break: true },
       {
         time: '1:30 – 2:30 PM',
         title: 'Session 3 — "AI for Your Business — Today"',
@@ -107,7 +125,7 @@ const days: {
           { text: 'Workshop: Create a "prompt playbook" for your 5 most common tasks' },
         ],
       },
-      { time: '11:15 – 11:30 AM', label: 'Coffee Break', icon: '☕', break: true },
+      { time: '11:15 – 11:30 AM', label: 'Coffee Break', icon: <CoffeeIcon />, break: true },
       {
         time: '11:30 AM – 12:30 PM',
         title: 'Session 6 — "Vibecoding & AI-Built Tools"',
@@ -118,7 +136,7 @@ const days: {
           { text: 'The "build vs. buy" framework: When to use AI to build vs. when to buy software' },
         ],
       },
-      { time: '12:30 – 1:30 PM', label: 'Lunch Break (Provided)', icon: '🍽️', break: true },
+      { time: '12:30 – 1:30 PM', label: 'Lunch Break (Provided)', icon: <LunchIcon />, break: true },
       {
         time: '1:30 – 2:30 PM',
         title: 'Session 7 — "AI Agents & Automation"',
@@ -210,7 +228,7 @@ export default function Curriculum() {
                   </div>
                   <div className="hidden sm:block w-px self-stretch" style={{ background: 'rgba(0,0,0,0.04)' }} />
                   <div className="flex items-center gap-2">
-                    <span className="text-sm" aria-hidden="true">{item.icon}</span>
+                    <span aria-hidden="true">{item.icon}</span>
                     <span className="text-xs" style={{ color: '#697386' }}>{item.label}</span>
                   </div>
                 </div>
@@ -220,7 +238,7 @@ export default function Curriculum() {
             return (
               <div key={item.time} className="glass glass-hover flex flex-col sm:flex-row gap-2 sm:gap-5 p-4 sm:p-5 rounded-xl">
                 <div className="flex-shrink-0 sm:w-36 sm:text-right pt-0.5">
-                  <span className="text-xs font-mono font-medium leading-relaxed" style={{ color: '#2563EB' }}>
+                  <span className="text-sm sm:text-xs font-mono font-medium leading-relaxed" style={{ color: '#2563EB' }}>
                     {item.time}
                   </span>
                 </div>

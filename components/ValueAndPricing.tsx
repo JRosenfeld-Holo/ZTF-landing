@@ -70,9 +70,9 @@ export default function ValueAndPricing({ onOpenQuiz, seatsRemaining = 28 }: { o
                             <path d="M2 5l2 2 4-4" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </div>
-                        <span className="text-[15px] leading-snug" style={{ color: item.highlight ? '#1D4ED8' : '#425466' }}>{item.label}</span>
+                        <span className="text-[13px] sm:text-[15px] leading-snug" style={{ color: item.highlight ? '#1D4ED8' : '#425466' }}>{item.label}</span>
                       </div>
-                      <span className="font-display font-semibold text-[15px] flex-shrink-0 ml-4" style={{ color: item.highlight ? '#3B82F6' : '#697386' }}>{item.value}</span>
+                      <span className="font-display font-semibold text-[13px] sm:text-[15px] flex-shrink-0 ml-3 sm:ml-4" style={{ color: item.highlight ? '#3B82F6' : '#697386' }}>{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -156,9 +156,23 @@ export default function ValueAndPricing({ onOpenQuiz, seatsRemaining = 28 }: { o
                       Reserve My Seat — $697 →
                     </a>
 
-                    <p className="text-center text-xs mt-3" style={{ color: '#697386' }}>
-                      Secure checkout · 30-day satisfaction guarantee
-                    </p>
+                    <div className="flex items-center justify-center gap-4 mt-3">
+                      <span className="flex items-center gap-1.5 text-xs" style={{ color: '#697386' }}>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                          <rect x="2" y="5" width="8" height="6" rx="1" stroke="#059669" strokeWidth="1.2"/>
+                          <path d="M4 5V3.5a2 2 0 014 0V5" stroke="#059669" strokeWidth="1.2" strokeLinecap="round"/>
+                        </svg>
+                        Secure checkout
+                      </span>
+                      <span style={{ color: '#d1d5db' }}>·</span>
+                      <span className="flex items-center gap-1.5 text-xs" style={{ color: '#697386' }}>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                          <path d="M6 1L2 3v3.5C2 9 3.8 10.8 6 11c2.2-.2 4-2 4-4.5V3L6 1z" stroke="#059669" strokeWidth="1.2" strokeLinejoin="round"/>
+                          <path d="M4 6l1.5 1.5L8 4.5" stroke="#059669" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        Full refund before July 29
+                      </span>
+                    </div>
 
                     <div className="gradient-divider my-5" />
 

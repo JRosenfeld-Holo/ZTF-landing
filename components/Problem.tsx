@@ -36,10 +36,20 @@ export default function Problem() {
         </div>
 
         <div className="space-y-5 text-lg leading-relaxed" style={{ color: '#425466' }}>
-          <p>Your competitors are using AI to write proposals in 10 minutes that used to take you 2 hours. They&apos;re generating marketing content, analyzing data, and responding to customers — all while you&apos;re still figuring out which tool to try first.</p>
-          <p>Your employees are waiting for <em className="not-italic font-semibold" style={{ color: '#1D4ED8' }}>you</em> to figure this out. They&apos;ve heard about ChatGPT. They&apos;ve seen the headlines. They&apos;re wondering why your business hasn&apos;t adopted it yet.</p>
-          <p>You&apos;ve tried watching YouTube videos. You&apos;ve read the articles. Maybe you even signed up for an online course — but you never finished it. Because watching someone else use AI isn&apos;t the same as doing it yourself, with someone right there to help when you get stuck.</p>
-          <p>You feel like you&apos;re falling behind — and you&apos;re right. The gap between businesses using AI and businesses ignoring it is getting wider every single month.</p>
+          <p>Your competitors are using AI to write proposals in 10 minutes that used to take you 2 hours. They&apos;re generating marketing content, analyzing data, and responding to customers — while you&apos;re still figuring out which tool to try first.</p>
+          <p>Your employees are waiting for <em className="not-italic font-semibold" style={{ color: '#1D4ED8' }}>you</em> to lead the way. They&apos;ve seen the headlines. They&apos;re wondering why your business hasn&apos;t moved on this yet.</p>
+        </div>
+
+        {/* Pull quote */}
+        <blockquote className="my-8 px-6 py-5 rounded-2xl border-l-4 text-base"
+          style={{ borderColor: '#2563EB', borderLeftWidth: '3px', background: 'rgba(37,99,235,0.04)' }}>
+          <p className="font-display font-semibold leading-snug" style={{ color: '#1e3a5c', fontSize: 'clamp(16px,2vw,20px)' }}>
+            &ldquo;You&apos;ve tried YouTube videos and online courses you never finished — because watching someone else use AI isn&apos;t the same as doing it yourself, with someone right there when you get stuck.&rdquo;
+          </p>
+        </blockquote>
+
+        <div className="text-lg leading-relaxed" style={{ color: '#425466' }}>
+          <p>The gap between businesses using AI and businesses ignoring it is growing every month. But that gap is closeable. <strong style={{ color: '#1D4ED8' }}>Two days</strong> is all it takes to go from falling behind to pulling ahead.</p>
         </div>
 
       </div>

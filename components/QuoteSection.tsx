@@ -29,7 +29,7 @@ export default function QuoteSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-10 min-h-[60vh] flex items-center py-24 sm:py-36 px-6 overflow-hidden"
+      className="relative z-10 min-h-[50svh] sm:min-h-[60vh] flex items-center py-24 sm:py-36 px-6 overflow-hidden"
       style={{ background: 'linear-gradient(160deg, #040C18 0%, #0A1628 55%, #0D1F3C 100%)' }}
     >
       {/* Subtle top glow — depth only */}

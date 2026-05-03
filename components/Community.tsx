@@ -34,10 +34,10 @@ export default function Community() {
         </p>
 
         {/* Pricing callout */}
-        <div className="inline-flex items-baseline gap-2 mb-8 px-6 py-3 rounded-xl"
+        <div className="inline-flex flex-col sm:flex-row items-center sm:items-baseline gap-1 sm:gap-2 mb-8 px-6 py-3 rounded-xl"
           style={{ background: 'rgba(37,99,235,0.05)', border: '1px solid rgba(37,99,235,0.12)' }}>
           <span className="font-display font-bold text-2xl" style={{ color: '#0A2540' }}>$99/mo</span>
-          <span className="text-sm" style={{ color: '#697386' }}>first 30 days, then $199/mo — cancel anytime</span>
+          <span className="text-sm text-center sm:text-left" style={{ color: '#697386' }}>first 30 days, then $199/mo — cancel anytime</span>
         </div>
 
         {/* CTA */}

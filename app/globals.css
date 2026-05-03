@@ -24,6 +24,13 @@
   --glow-orange: rgba(249,115,22,0.4);
 }
 
+/* ─── Focus rings — keyboard nav only, not mouse clicks ─────── */
+:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* ─── Base ───────────────────────────────────────────────────── */
 html { scroll-behavior: smooth; scroll-padding-top: 80px; color-scheme: light; }
 body {
