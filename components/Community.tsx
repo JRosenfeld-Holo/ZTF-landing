@@ -5,32 +5,53 @@ export default function Community() {
   const ref = useReveal()
 
   return (
-    <section className="relative z-10 py-16 px-6" style={{ background: 'rgba(246,249,252,0.85)' }}>
-      <div ref={ref} className="reveal max-w-3xl mx-auto">
-        <div className="glass rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start md:items-center"
-          style={{ border: '1px solid rgba(37,99,235,0.18)' }}>
-          <div className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center"
-            style={{ background: 'rgba(37,99,235,0.1)', border: '1px solid rgba(37,99,235,0.2)' }}>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <circle cx="9" cy="9" r="4" stroke="#3B82F6" strokeWidth="1.5"/>
-              <circle cx="19" cy="9" r="4" stroke="#3B82F6" strokeWidth="1.5"/>
-              <path d="M3 23c0-3.314 2.686-6 6-6h8c3.314 0 6 2.686 6 6" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
-          </div>
+    <section className="relative z-10 py-20 sm:py-28 px-4 sm:px-6" style={{ background: '#FFFFFF' }}>
+      <div ref={ref} className="reveal max-w-2xl mx-auto text-center">
 
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#2563EB' }}>Also Available</span>
-              <span className="px-2 py-0.5 rounded-full text-xs" style={{ background: 'rgba(37,99,235,0.1)', color: '#2563EB', border: '1px solid rgba(37,99,235,0.2)' }}>Optional</span>
-            </div>
-            <h3 className="font-display font-bold text-lg mb-2" style={{ color: '#0A2540' }}>Zero to Fluent Community</h3>
-            <p className="text-sm leading-relaxed mb-3" style={{ color: '#425466' }}>
-              Continue learning after the workshop with monthly AI office hours, a private member forum, new prompt packs every month, and peer accountability from DFW business owners.{' '}
-              <strong className="font-semibold" style={{ color: '#1e3a5c' }}>$199/month</strong> — cancel anytime.
-            </p>
-            <p className="text-xs" style={{ color: '#697386' }}>Workshop attendees receive their first 30 days free.</p>
-          </div>
+        {/* Eyebrow */}
+        <div className="section-label" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>Also Available</div>
+
+        {/* Icon */}
+        <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6"
+          style={{ background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.15)' }}>
+          <svg width="28" height="28" viewBox="0 0 26 26" fill="none">
+            <circle cx="9" cy="9" r="4" stroke="#2563EB" strokeWidth="1.5"/>
+            <circle cx="19" cy="9" r="4" stroke="#2563EB" strokeWidth="1.5"/>
+            <path d="M3 23c0-3.314 2.686-6 6-6h8c3.314 0 6 2.686 6 6" stroke="#2563EB" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
         </div>
+
+        {/* Heading */}
+        <h3 className="font-display font-bold mb-4 leading-tight"
+          style={{ fontSize: 'clamp(28px,4vw,44px)', letterSpacing: '-0.025em', color: '#0A2540' }}>
+          Zero to Fluent{' '}
+          <span className="gradient-text">Community</span>
+        </h3>
+
+        {/* Description */}
+        <p className="text-lg leading-relaxed mb-8 max-w-xl mx-auto" style={{ color: '#425466' }}>
+          Continue learning after the workshop with monthly AI office hours, a private member forum, new prompt packs every month, and peer accountability from DFW business owners.
+        </p>
+
+        {/* Pricing callout */}
+        <div className="inline-flex items-baseline gap-2 mb-8 px-6 py-3 rounded-xl"
+          style={{ background: 'rgba(37,99,235,0.05)', border: '1px solid rgba(37,99,235,0.12)' }}>
+          <span className="font-display font-bold text-2xl" style={{ color: '#0A2540' }}>$99/mo</span>
+          <span className="text-sm" style={{ color: '#697386' }}>first 30 days, then $199/mo — cancel anytime</span>
+        </div>
+
+        {/* CTA */}
+        <div>
+          <a href="/community"
+            className="inline-flex items-center gap-2.5 font-display font-bold text-base rounded-xl transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
+            style={{ background: '#FFFFFF', color: '#2563EB', padding: '16px 36px', boxShadow: '0 4px 24px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.08)' }}
+            onMouseOver={e => { e.currentTarget.style.boxShadow = '0 8px 40px rgba(0,0,0,0.25), 0 4px 12px rgba(0,0,0,0.12)' }}
+            onMouseOut={e => { e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.08)' }}>
+            Learn more about the community
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
+        </div>
+
       </div>
     </section>
   )

@@ -5,7 +5,7 @@ import NebulaCanvas from './NebulaCanvas'
 const PHRASES = [
   'in 2 Days.',
   'without Code.',
-  'starting April 21.',
+  'starting August 12.',
   'in Frisco, TX.',
 ]
 
@@ -63,7 +63,7 @@ function CountUp({ target, duration = 1200 }: { target: number; duration?: numbe
 }
 
 function Countdown() {
-  const target = new Date('2026-04-21T10:00:00-05:00').getTime()
+  const target = new Date('2026-08-12T10:00:00-05:00').getTime()
   const [time, setTime] = useState({ d: '--', h: '--', m: '--', s: '--' })
 
   useEffect(() => {
@@ -108,7 +108,7 @@ function Countdown() {
 
 export default function Hero({ onOpenQuiz }: { onOpenQuiz: () => void }) {
   return (
-    <section id="hero" className="relative min-h-[85svh] sm:min-h-screen flex items-center justify-center pt-8 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden"
+    <section id="hero" className="relative min-h-[85svh] sm:min-h-screen flex items-center justify-center pt-36 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden"
       style={{ background: '#FFFFFF' }}>
       {/* Hide scroll animation canvas entirely on mobile */}
       <div className="hidden sm:block absolute inset-0">
@@ -192,7 +192,7 @@ export default function Hero({ onOpenQuiz }: { onOpenQuiz: () => void }) {
         <div className="flex flex-wrap gap-x-3 sm:gap-x-6 gap-y-2 sm:gap-y-3 justify-center mb-10">
           {[
             { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l.93 2.86h3.01l-2.44 1.77.93 2.87L7 6.73l-2.43 1.77.93-2.87L3.06 3.86h3.01L7 1z" stroke="#3B82F6" strokeWidth="1.2" strokeLinejoin="round"/></svg>, label: 'Frisco, TX' },
-            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="9" rx="1.5" stroke="#3B82F6" strokeWidth="1.2"/><path d="M5 2v2M9 2v2M2 6h10" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round"/></svg>, label: 'April 21–22, 2026' },
+            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="9" rx="1.5" stroke="#3B82F6" strokeWidth="1.2"/><path d="M5 2v2M9 2v2M2 6h10" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round"/></svg>, label: 'August 12–13, 2026' },
             { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#3B82F6" strokeWidth="1.2"/><path d="M7 4v3.5l2 1.5" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round"/></svg>, label: '10am – 3:30pm' },
             { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5h10M2 5v6a1 1 0 001 1h6a1 1 0 001-1V5M5 5V4a2 2 0 014 0v1" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, label: 'Lunch Included' },
             { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l.93 2.86h3.01l-2.44 1.77.93 2.87L7 6.73l-2.43 1.77.93-2.87L3.06 3.86h3.01L7 1z" stroke="#3B82F6" strokeWidth="1.2" strokeLinejoin="round"/></svg>, label: 'Only 40 Seats' },

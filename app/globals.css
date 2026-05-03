@@ -181,107 +181,7 @@ body {
   animation-play-state: paused;
 }
 
-/* ─── Liquid Glass Nav ───────────────────────────────────────── */
-.liq-nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 6px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  box-shadow:
-    0 4px 24px rgba(0,0,0,0.1),
-    0 1px 4px rgba(0,0,0,0.07),
-    inset 0 1px 0 rgba(255,255,255,0.9),
-    inset 0 0 0 1px rgba(0,0,0,0.07);
-  transition: box-shadow 0.4s ease;
-}
-/* Curved highlight at the top */
-.liq-nav::before {
-  content: '';
-  position: absolute;
-  top: 1px; left: 1px; right: 1px;
-  height: 40%;
-  border-radius: 999px 999px 20px 20px / 999px 999px 10px 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
-  pointer-events: none;
-  z-index: 8;
-}
-/* Sliding active pill */
-.liq-pill {
-  position: absolute;
-  top: 6px;
-  left: 0;
-  height: calc(100% - 12px);
-  background: rgba(246,249,252,0.95);
-  border-radius: 999px;
-  box-shadow:
-    0 2px 8px rgba(0,0,0,0.1),
-    0 1px 2px rgba(0,0,0,0.06),
-    inset 0 1px 0 rgba(255,255,255,0.9);
-  pointer-events: none;
-  z-index: 1;
-  transition:
-    transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1),
-    width   0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
-}
-/* Mouse-tracking glare */
-.liq-glare-wrap {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 5;
-}
-.liq-glare {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  background: radial-gradient(circle 90px at var(--gx, 50%) var(--gy, 50%), rgba(37,99,235,0.06) 0%, transparent 100%);
-  transition: opacity 0.25s ease;
-}
-.liq-nav:hover .liq-glare { opacity: 1; }
-/* Nav link buttons */
-.liq-btn {
-  position: relative;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  height: 36px;
-  padding: 0 16px;
-  border-radius: 999px;
-  font-family: var(--font-display);
-  font-size: 13.5px;
-  font-weight: 600;
-  color: rgba(10,28,60,0.45);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color 0.25s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-.liq-btn.active { color: rgba(10,28,60,0.9); }
-.liq-btn:not(.active):hover { color: rgba(10,28,60,0.7); }
-.liq-btn-inner {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: transform 0.18s cubic-bezier(0.32, 0.72, 0, 1);
-}
-.liq-btn:active .liq-btn-inner { transform: scale(0.91); }
-/* Vertical divider */
-.liq-divider {
-  width: 1px;
-  height: 20px;
-  background: rgba(0,0,0,0.1);
-  flex-shrink: 0;
-  margin: 0 4px;
-}
+/* ─── Site Header — no custom classes needed; all Tailwind utilities ─ */
 
 /* ─── Reduced motion ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
@@ -289,7 +189,6 @@ body {
   .reveal { opacity: 1; transform: none; transition: none; }
   .blob-scene__blob { animation: none; }
   .carousel-3d { animation-duration: 120s; }
-  .liq-pill { transition: none; }
 }
 
 /* ─── Sticky mobile CTA bar ──────────────────────────────────── */
@@ -305,6 +204,17 @@ body {
   backdrop-filter: blur(20px);
   border-top: 1px solid rgba(0,0,0,0.08);
   box-shadow: 0 -4px 24px rgba(0,0,0,0.07);
+}
+
+/* ─── AI Stats card hover ────────────────────────────────────── */
+.ai-stat-card {
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.ai-stat-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.1) !important;
+  border-color: rgba(37,99,235,0.4) !important;
+  box-shadow: 0 8px 32px rgba(37,99,235,0.2), 0 0 0 1px rgba(37,99,235,0.15);
 }
 
 /* ─── Divider line ───────────────────────────────────────────── */
@@ -957,10 +867,178 @@ body {
   animation: label-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
-/* ─── FAQ smooth accordion ───────────────────────────────────── */
-.faq-body {
+/* ─── FAQ premium shimmer accordion ────────────────────────────── */
+.faq-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.faq-item {
+  --speed: 0.26s;
+  --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s var(--ease);
   overflow: hidden;
-  transition: max-height 0.38s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease;
+}
+
+.faq-item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(37, 99, 235, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -4px rgba(0, 0, 0, 0.02);
+  transform: translateY(-2px);
+}
+
+.faq-item[data-open] {
+  background: #ffffff;
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 12px 24px -8px rgba(37, 99, 235, 0.12), 0 4px 8px -4px rgba(37, 99, 235, 0.04);
+  transform: translateY(-2px);
+}
+
+/* ── Trigger button ── */
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  outline-offset: 4px;
+}
+
+.faq-q {
+  flex: 1;
+  color: #1e3a5c;
+  font-size: 1.05rem;
+  transition: color 0.2s ease;
+}
+.faq-item:hover .faq-q { color: #2563EB; }
+.faq-item[data-open] .faq-q { color: #2563EB; }
+
+/* ── Plus icon ── */
+.faq-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.03);
+  color: #697386;
+  opacity: 0.6;
+  transition:
+    transform var(--speed) cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.2s ease,
+    opacity 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.faq-trigger:is(:hover, :focus-visible) .faq-icon {
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563EB;
+  opacity: 1;
+}
+.faq-item[data-open] .faq-icon {
+  transform: rotate(225deg);
+  background: #2563EB;
+  color: #FFFFFF;
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* ── Panel expand (grid 0fr → 1fr) ── */
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+}
+.faq-item[data-open] .faq-panel {
+  grid-template-rows: 1fr;
+}
+
+.faq-panel-inner {
+  overflow: hidden;
+}
+
+/* ── Content wrapper ── */
+.faq-answer-wrap {
+  padding: 0 24px 24px;
+}
+
+/* ── Base answer text (works without animation) ── */
+.faq-answer {
+  display: inline;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #425466;
+}
+
+/* ── Animation enhancements ── */
+@media (prefers-reduced-motion: no-preference) {
+  .faq-panel {
+    transition: grid-template-rows var(--speed) var(--ease);
+  }
+
+  .faq-icon {
+    transition:
+      transform var(--speed) cubic-bezier(0.34,1.56,0.64,1),
+      background 0.2s ease,
+      opacity 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .faq-answer-wrap {
+    transform: translateY(20px);
+    opacity: 0;
+    transition:
+      transform var(--speed) var(--ease),
+      opacity var(--speed) var(--ease);
+  }
+  .faq-item[data-open] .faq-answer-wrap {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Shimmer gradient sweep */
+  .faq-answer {
+    background-image: linear-gradient(
+      90deg,
+      #425466 0%,
+      #425466 33.3%,
+      #2563EB 36%,
+      #0EA5E9 42%,
+      transparent 48%,
+      transparent 100%
+    );
+    background-position: 100% 0;
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition-property: background-position;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-duration: 1.5s;
+  }
+  .faq-item[data-open] .faq-answer {
+    background-position: 0% 0;
+  }
+  .faq-answer::selection {
+    background: #2563EB;
+    color: #FFFFFF;
+    -webkit-text-fill-color: #FFFFFF;
+  }
 }
 
 /* ─── Reduced-motion overrides ───────────────────────────────── */
@@ -972,5 +1050,4 @@ body {
   .sol-card, .sol-state { transition: none; }
   .reveal .word-unit { transition: none; }
   .section-label-visible { animation: none; }
-  .faq-body { transition: none; }
 }

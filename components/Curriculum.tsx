@@ -160,7 +160,7 @@ export default function Curriculum() {
   const day = days[active]
 
   return (
-    <section id="curriculum" className="relative z-10 py-16 sm:py-28 px-4 sm:px-6" style={{ background: 'rgba(246,249,252,0.85)' }}>
+    <section id="curriculum" className="relative z-10 py-16 sm:py-28 px-4 sm:px-6" style={{ background: '#FFFFFF' }}>
       <div ref={ref} className="reveal max-w-3xl mx-auto">
 
         {/* Header */}

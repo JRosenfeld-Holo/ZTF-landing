@@ -5,22 +5,21 @@ export default function FinalCTA({ onOpenQuiz }: { onOpenQuiz: () => void }) {
   const ref = useReveal()
 
   return (
-    <section className="relative z-10 py-20 sm:py-32 px-4 sm:px-6 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A2540 0%, #0F3460 50%, #1E3A5C 100%)' }}>
-      {/* Radial spotlight */}
+    <section className="relative z-10 py-20 sm:py-32 px-4 sm:px-6 overflow-hidden"
+      style={{ background: 'linear-gradient(160deg, #040C18 0%, #0A1628 55%, #0D1F3C 100%)' }}>
+      {/* Subtle radial glow for depth */}
       <div className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(37,99,235,0.2) 0%, rgba(37,99,235,0.08) 40%, transparent 70%)' }} />
-
-      <div className="gradient-divider absolute top-0 left-0 right-0" />
+        style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 100%, rgba(37,99,235,0.2) 0%, transparent 70%)' }} />
 
       <div ref={ref} className="reveal relative z-10 max-w-2xl mx-auto text-center">
-        <p className="font-semibold text-xs uppercase tracking-[0.15em] mb-6" style={{ color: '#2563EB' }}>
-          April 21–22, 2026 · Frisco, TX
+        <p className="font-semibold text-xs uppercase tracking-[0.15em] mb-6" style={{ color: '#93C5FD' }}>
+          August 12–13, 2026 · Frisco, TX
         </p>
 
         <h2 className="font-display font-bold mb-6 leading-tight"
           style={{ fontSize: 'clamp(32px,5.5vw,60px)', letterSpacing: '-0.03em', color: '#FFFFFF' }}>
           The Gap Is Growing.<br />
-          <span className="gradient-text-light">Don&apos;t Get Left Behind.</span>
+          <span style={{ color: '#FFFFFF', textShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>Don&apos;t Get Left Behind.</span>
         </h2>
 
         <p className="text-lg leading-relaxed mb-12 max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.7)' }}>
@@ -44,7 +43,7 @@ export default function FinalCTA({ onOpenQuiz }: { onOpenQuiz: () => void }) {
         </div>
 
         <p className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
-          Only 40 seats · Lunch & materials included · April 21–22 in Frisco, TX
+          Only 40 seats · Lunch & materials included · August 12–13 in Frisco, TX
         </p>
       </div>
     </section>

@@ -42,13 +42,6 @@ export default function Problem() {
           <p>You feel like you&apos;re falling behind — and you&apos;re right. The gap between businesses using AI and businesses ignoring it is getting wider every single month.</p>
         </div>
 
-        {/* Pull quote */}
-        <blockquote className="mt-12 pl-6" style={{ borderLeft: '3px solid #2563EB' }}>
-          <p className="font-display font-semibold text-lg sm:text-xl leading-snug" style={{ color: '#1e3a5c' }}>
-            &ldquo;You don&apos;t need more YouTube tutorials — you need two days, a room full of peers, and someone who&apos;s done it inside real businesses.{' '}
-            <span className="gradient-text">That&apos;s what this workshop is.</span>&rdquo;
-          </p>
-        </blockquote>
       </div>
 
       <div className="gradient-divider absolute bottom-0 left-0 right-0" />

@@ -9,13 +9,15 @@ import Solution from '@/components/Solution'
 import Instructor from '@/components/Instructor'
 import Curriculum from '@/components/Curriculum'
 import WhoIsThisFor from '@/components/WhoIsThisFor'
-import ValueStack from '@/components/ValueStack'
-import Pricing from '@/components/Pricing'
+import ValueAndPricing from '@/components/ValueAndPricing'
 import Community from '@/components/Community'
 import FAQ from '@/components/FAQ'
 import Venue from '@/components/Venue'
 import FinalCTA from '@/components/FinalCTA'
 import QuizModal from '@/components/QuizModal'
+import QuoteSection from '@/components/QuoteSection'
+import AIStats from '@/components/AIStats'
+import PressSection from '@/components/PressSection'
 import ToastRegion, { showToast } from '@/components/Toast'
 
 function ScrollProgress() {
@@ -44,11 +46,8 @@ export default function Page() {
   // Social proof: simulate a registration after 60 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
-      setSeatsRemaining(prev => {
-        const next = prev - 1
-        showToast('info', 'New Registration', `Someone in DFW just reserved their seat — ${next} remaining`)
-        return next
-      })
+      setSeatsRemaining(prev => prev - 1)
+      showToast('info', 'New Registration', 'Someone in DFW just reserved their seat — 27 remaining')
     }, 60_000)
     return () => clearTimeout(timer)
   }, [])
@@ -75,12 +74,14 @@ export default function Page() {
         <Hero onOpenQuiz={() => setQuizOpen(true)} />
         <ToolsCarousel />
         <Problem />
+        <QuoteSection />
         <Solution />
-<Instructor />
+        <AIStats />
+        <PressSection />
+        <Instructor />
         <Curriculum />
         <WhoIsThisFor />
-<ValueStack />
-        <Pricing onOpenQuiz={() => setQuizOpen(true)} seatsRemaining={seatsRemaining} />
+        <ValueAndPricing onOpenQuiz={() => setQuizOpen(true)} seatsRemaining={seatsRemaining} />
         <Community />
         <FAQ />
         <Venue />
@@ -91,7 +92,7 @@ export default function Page() {
         <div className="flex justify-center mb-4">
           <span className="glass-badge glass-badge--indigo">
             <span className="glass-badge__dot" />
-            April 21–22, 2026 · Frisco, TX
+            August 12–13, 2026 · Frisco, TX
           </span>
         </div>
         <div className="flex justify-center mb-1">
@@ -114,7 +115,7 @@ export default function Page() {
         {/* Urgency copy */}
         <div className="flex-1 min-w-0">
           <p className="text-xs font-semibold font-display" style={{ color: '#3B82F6' }}>
-            Starts April 21 · Frisco, TX
+            Starts August 12 · Frisco, TX
           </p>
           <p className="text-sm font-bold font-display leading-tight mt-0.5" style={{ color: '#0A2540' }}>
             Only {seatsRemaining} seats remaining

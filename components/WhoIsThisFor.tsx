@@ -7,7 +7,7 @@ const forList = [
   'You have zero to basic AI experience',
   'You learn better in person than from online courses',
   'You want to apply AI to YOUR specific business problems',
-  "You're in DFW and can attend April 21–22 in Frisco",
+  "You're in DFW and can attend August 12–13 in Frisco",
   "You're ready to invest in learning that pays dividends immediately",
 ]
 
@@ -23,28 +23,27 @@ export default function WhoIsThisFor() {
 
   return (
     <section id="who" className="relative z-10 py-16 sm:py-28 px-4 sm:px-6 overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #22D3EE 0%, #06B6D4 35%, #0EA5E9 65%, #2563EB 100%)' }}>
+      style={{ background: 'linear-gradient(160deg, #040C18 0%, #0A1628 55%, #0D1F3C 100%)' }}>
 
-      {/* Neural canvas — visible against colored bg */}
+      {/* Neural canvas — pops nicely on dark bg */}
       <NeuralCanvas />
 
-      {/* Radial white spotlight — mirrors FinalCTA's dark radial, inverted */}
+      {/* Subtle radial glow for depth */}
       <div className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 50%, transparent 75%)' }} />
+        style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37,99,235,0.18) 0%, transparent 70%)' }} />
 
       <div ref={ref} className="reveal relative z-10 max-w-4xl mx-auto">
         <div className="text-center mb-14">
-          {/* Eyebrow label — white pill on colored bg */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5 text-xs font-bold uppercase tracking-widest"
-            style={{ background: 'rgba(255,255,255,0.18)', border: '1px solid rgba(255,255,255,0.35)', color: '#FFFFFF' }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-white inline-block" />
+            style={{ background: 'rgba(37,99,235,0.2)', border: '1px solid rgba(99,179,237,0.3)', color: '#93C5FD' }}>
+            <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#60A5FA' }} />
             Who Is This For
           </div>
 
           <h2 className="font-display font-bold leading-tight"
             style={{ fontSize: 'clamp(28px,4.5vw,48px)', letterSpacing: '-0.025em', color: '#FFFFFF' }}>
             Is This Workshop{' '}
-            <span className="gradient-text-navy">Right for You?</span>
+            <span style={{ color: '#38BDF8' }}>Right for You?</span>
           </h2>
         </div>
 

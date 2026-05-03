@@ -62,11 +62,12 @@ export default function Venue() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-5">
-          {/* Map */}
-          <div className="glass rounded-2xl overflow-hidden min-h-[280px]">
+          {/* Map — flex-col so iframe fills full card height */}
+          <div className="glass rounded-2xl overflow-hidden flex flex-col">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3341.0!2d-96.82!3d33.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDA5JzAwLjAiTiA5NsKwNDknMTIuMCJX!5e0!3m2!1sen!2sus!4v1"
-              width="100%" height="280" style={{ border: 0 }}
+              width="100%"
+              style={{ border: 0, display: 'block', flex: '1 1 0', minHeight: '280px' }}
               allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               title="Venue location"
             />

@@ -1,13 +1,13 @@
 import Image from 'next/image'
 
-const tools: { name: string; by: string; slug: string; brand: string; localSrc?: string }[] = [
-  { name: 'Claude', by: 'Anthropic', slug: 'anthropic', brand: '#CC785C' },
-  { name: 'ChatGPT', by: 'OpenAI', slug: 'openai', brand: '#10A37F', localSrc: '/chatgpt-logo.webp' },
-  { name: 'Gemini', by: 'Google', slug: 'googlegemini', brand: '#4285F4' },
-  { name: 'Perplexity', by: 'AI Search', slug: 'perplexity', brand: '#1FB8CD' },
-  { name: 'Cursor', by: 'AI Editor', slug: 'cursor', brand: '#1C1C1C' },
-  { name: 'n8n', by: 'Automation', slug: 'n8n', brand: '#EA4B71' },
-  { name: 'Zapier', by: 'Automation', slug: 'zapier', brand: '#FF4F00' },
+const tools: { name: string; by: string; src: string; brand: string }[] = [
+  { name: 'Claude', by: 'Anthropic', src: '/tool-claude.svg', brand: '#CC785C' },
+  { name: 'ChatGPT', by: 'OpenAI', src: '/chatgpt-logo.webp', brand: '#10A37F' },
+  { name: 'Gemini', by: 'Google', src: '/tool-gemini.svg', brand: '#4285F4' },
+  { name: 'Perplexity', by: 'AI Search', src: '/tool-perplexity.svg', brand: '#1FB8CD' },
+  { name: 'Cursor', by: 'AI Editor', src: '/tool-cursor.svg', brand: '#1C1C1C' },
+  { name: 'n8n', by: 'Automation', src: '/tool-n8n.svg', brand: '#EA4B71' },
+  { name: 'Zapier', by: 'Automation', src: '/tool-zapier.svg', brand: '#FF4F00' },
 ]
 
 function ToolCard({ t }: { t: typeof tools[0] }) {
@@ -24,12 +24,11 @@ function ToolCard({ t }: { t: typeof tools[0] }) {
       aria-label={`${t.name} — ${t.by}`}
     >
       <Image
-        src={t.localSrc ?? `https://cdn.simpleicons.org/${t.slug}/${t.brand.replace('#', '')}`}
+        src={t.src}
         alt={t.name}
         width={28}
         height={28}
         className="object-contain flex-shrink-0"
-        style={t.localSrc ? { filter: 'brightness(0) saturate(100%)' } : undefined}
         unoptimized
       />
       <div>
@@ -46,7 +45,7 @@ export default function ToolsCarousel() {
       aria-label="AI tools you will learn"
       className="relative z-10 py-14 overflow-hidden"
       style={{
-        background: 'rgba(246,249,252,0.9)',
+        background: '#F8FAFC',
         borderTop: '1px solid rgba(37,99,235,0.06)',
         borderBottom: '1px solid rgba(37,99,235,0.06)',
       }}

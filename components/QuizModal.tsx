@@ -336,7 +336,7 @@ export default function QuizModal({ onClose }: { onClose: () => void }) {
                 onMouseOut={e => (e.currentTarget.style.boxShadow = '0 0 30px rgba(37,99,235,0.4)')}>
                 Reserve My Seat — $697 →
               </a>
-              <p className="text-xs text-center mt-2 mb-6" style={{ color: '#697386' }}>Only 28 seats remaining · April 21–22, Frisco TX</p>
+              <p className="text-xs text-center mt-2 mb-6" style={{ color: '#697386' }}>Only 28 seats remaining · August 12–13, Frisco TX</p>
 
               {/* Divider */}
               <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.08) 70%, transparent)', margin: '0 0 20px' }} />

@@ -71,7 +71,7 @@ export default function Solution() {
   }, [])
 
   return (
-    <section id="solution" className="relative z-10 py-16 sm:py-28 px-4 sm:px-6" style={{ background: 'rgba(246,249,252,0.85)' }}>
+    <section id="solution" className="relative z-10 py-16 sm:py-28 px-4 sm:px-6" style={{ background: '#F8FAFC' }}>
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 

@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useReveal } from '@/hooks/useReveal'
 
 const faqs = [
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "What's the refund policy?",
-    a: 'We offer a full refund up to 14 days before the event (April 7, 2026). After that, we can transfer your seat to a colleague or a future event date, but cannot offer refunds within 14 days of the workshop.',
+    a: 'We offer a full refund up to 14 days before the event (July 29, 2026). After that, we can transfer your seat to a colleague or a future event date, but cannot offer refunds within 14 days of the workshop.',
   },
   {
     q: 'Where exactly is the venue?',
@@ -37,45 +37,62 @@ const faqs = [
   },
 ]
 
-function AccordionItem({ faq, isOpen, onToggle }: { faq: typeof faqs[0]; isOpen: boolean; onToggle: () => void }) {
-  const bodyRef = useRef<HTMLDivElement>(null)
+function AccordionItem({ faq, index, isOpen, onToggle }: {
+  faq: typeof faqs[0]; index: number; isOpen: boolean; onToggle: () => void
+}) {
+  const answerRef = useRef<HTMLParagraphElement>(null)
+
+  // Reset shimmer: when item closes, kill transition so bg-position
+  // snaps back to the closed state, ready to replay on next open
+  useEffect(() => {
+    if (!isOpen && answerRef.current) {
+      const el = answerRef.current
+      el.style.setProperty('transition', 'none')
+      void el.offsetHeight          // force reflow
+      el.style.removeProperty('transition')
+    }
+  }, [isOpen])
+
+  const charCount = faq.a.length
 
   return (
-    <div className="glass rounded-xl overflow-hidden"
-      style={{ border: isOpen ? '1px solid rgba(37,99,235,0.3)' : '1px solid rgba(0,0,0,0.05)', transition: 'border-color 0.25s ease' }}>
+    <li
+      className="faq-item"
+      data-open={isOpen ? '' : undefined}
+    >
       <button
+        type="button"
         onClick={onToggle}
-        className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
         aria-expanded={isOpen}
+        aria-controls={`faq-panel-${index}`}
+        className="faq-trigger"
       >
-        <span className="font-display font-semibold text-sm pr-6" style={{ color: isOpen ? '#2563EB' : '#1e3a5c', transition: 'color 0.2s ease' }}>
+        <span className="faq-q font-display font-semibold text-sm">
           {faq.q}
         </span>
-        <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center"
-          style={{
-            background: isOpen ? 'rgba(37,99,235,0.15)' : 'rgba(0,0,0,0.04)',
-            transform: isOpen ? 'rotate(45deg)' : 'none',
-            transition: 'transform 0.3s cubic-bezier(0.34,1.56,0.64,1), background 0.2s ease',
-          }}>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M6 2v8M2 6h8" stroke={isOpen ? '#3B82F6' : '#697386'} strokeWidth="1.5" strokeLinecap="round"/>
+
+        {/* Plus / × icon */}
+        <span className="faq-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M6 2v8M2 6h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
           </svg>
-        </div>
+        </span>
       </button>
-      <div
-        ref={bodyRef}
-        className="faq-body"
-        style={{
-          maxHeight: isOpen ? `${bodyRef.current?.scrollHeight ?? 400}px` : '0',
-          opacity: isOpen ? 1 : 0,
-        }}
-      >
-        <div className="px-6 pb-5 pt-4 text-sm leading-relaxed"
-          style={{ color: '#425466', borderTop: '1px solid rgba(37,99,235,0.08)' }}>
-          {faq.a}
+
+      <div id={`faq-panel-${index}`} className="faq-panel">
+        <div className="faq-panel-inner">
+          <div className="faq-answer-wrap">
+            <p
+              ref={answerRef}
+              className="faq-answer"
+              style={{ '--char-count': charCount } as React.CSSProperties}
+            >
+              {faq.a}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </li>
   )
 }
 
@@ -84,7 +101,7 @@ export default function FAQ() {
   const ref = useReveal()
 
   return (
-    <section id="faq" className="relative z-10 py-16 sm:py-28 px-4 sm:px-6" style={{ background: 'rgba(246,249,252,0.85)' }}>
+    <section id="faq" className="relative z-10 py-16 sm:py-28 px-4 sm:px-6" style={{ background: '#F8FAFC' }}>
       <div ref={ref} className="reveal max-w-3xl mx-auto">
         <div className="text-center mb-14">
           <div className="section-label" style={{ display: 'inline-flex' }}>FAQ</div>
@@ -94,16 +111,17 @@ export default function FAQ() {
           </h2>
         </div>
 
-        <div className="space-y-2">
+        <ul className="faq-list space-y-4">
           {faqs.map((faq, i) => (
             <AccordionItem
               key={i}
               faq={faq}
+              index={i}
               isOpen={open === i}
               onToggle={() => setOpen(open === i ? null : i)}
             />
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )
