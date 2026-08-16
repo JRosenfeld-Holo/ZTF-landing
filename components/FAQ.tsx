@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "What's the refund policy?",
-    a: 'We offer a full refund up to 14 days before the event (July 29, 2026). After that, we can transfer your seat to a colleague or a future event date, but cannot offer refunds within 14 days of the workshop.',
+    a: 'We offer a full refund up to 14 days before the event (October 7, 2026). After that, we can transfer your seat to a colleague or a future event date, but cannot offer refunds within 14 days of the workshop.',
   },
   {
     q: 'Where exactly is the venue?',

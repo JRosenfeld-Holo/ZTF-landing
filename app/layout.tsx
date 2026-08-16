@@ -17,10 +17,10 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: 'Zero to Fluent — 2-Day AI Workshop in Frisco, TX',
-  description: 'Become AI-fluent in 2 days. A hands-on, in-person AI workshop for small business owners in DFW. August 12–13, 2026. Only 40 seats.',
+  description: 'Become AI-fluent in 2 days. A hands-on, in-person AI workshop for small business owners in DFW. October 21–22, 2026. Only 40 seats.',
   openGraph: {
     title: 'Zero to Fluent — 2-Day AI Workshop in Frisco, TX',
-    description: 'Hands-on AI training for DFW small business owners. August 12–13 in Frisco. $697/seat. Only 40 seats.',
+    description: 'Hands-on AI training for DFW small business owners. October 21–22 in Frisco. $697/seat. Only 40 seats.',
     type: 'website',
     url: 'https://zerotofluent.ai',
   },

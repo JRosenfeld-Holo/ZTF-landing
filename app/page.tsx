@@ -92,7 +92,7 @@ export default function Page() {
         <div className="flex justify-center mb-4">
           <span className="glass-badge glass-badge--indigo">
             <span className="glass-badge__dot" />
-            August 12–13, 2026 · Frisco, TX
+            October 21–22, 2026 · Frisco, TX
           </span>
         </div>
         <div className="flex justify-center mb-1">
@@ -115,7 +115,7 @@ export default function Page() {
         {/* Urgency copy */}
         <div className="flex-1 min-w-0">
           <p className="text-xs font-semibold font-display" style={{ color: '#3B82F6' }}>
-            Starts August 12 · Frisco, TX
+            Starts October 21 · Frisco, TX
           </p>
           <p className="text-sm font-bold font-display leading-tight mt-0.5" style={{ color: '#0A2540' }}>
             Only {seatsRemaining} seats remaining

@@ -2,7 +2,7 @@
 import { useReveal } from '@/hooks/useReveal'
 
 const includes = [
-  'Both days of in-person training (August 12–13)',
+  'Both days of in-person training (October 21–22)',
   'Catered lunch both days + coffee all day',
   'All workshop materials and AI Prompt Library (100+ prompts)',
   'Personalized 90-day AI implementation roadmap',
@@ -33,7 +33,7 @@ export default function Pricing({ onOpenQuiz, seatsRemaining = 28 }: { onOpenQui
             {/* Early bird banner */}
             <div className="text-center py-2.5 text-xs font-bold uppercase tracking-[0.1em]"
               style={{ background: 'linear-gradient(90deg, #2563EB, #0EA5E9)', color: '#FFFFFF' }}>
-              Early Bird Rate — Ends August 5
+              Early Bird Rate — Ends October 14
             </div>
 
             <div className="p-8 md:p-10">
@@ -100,7 +100,7 @@ export default function Pricing({ onOpenQuiz, seatsRemaining = 28 }: { onOpenQui
         </div>
 
         <p className="text-center text-xs mt-5" style={{ color: '#697386' }}>
-          August 12–13, 2026 · Frisco, TX · 10am–3:30pm each day
+          October 21–22, 2026 · Frisco, TX · 10am–3:30pm each day
         </p>
       </div>
     </section>

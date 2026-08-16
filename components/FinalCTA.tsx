@@ -13,7 +13,7 @@ export default function FinalCTA({ onOpenQuiz }: { onOpenQuiz: () => void }) {
 
       <div ref={ref} className="reveal relative z-10 max-w-2xl mx-auto text-center">
         <p className="font-semibold text-xs uppercase tracking-[0.15em] mb-6" style={{ color: '#93C5FD' }}>
-          August 12–13, 2026 · Frisco, TX
+          October 21–22, 2026 · Frisco, TX
         </p>
 
         <h2 className="font-display font-bold mb-6 leading-tight"
@@ -43,7 +43,7 @@ export default function FinalCTA({ onOpenQuiz }: { onOpenQuiz: () => void }) {
         </div>
 
         <p className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
-          Only 40 seats · Lunch & materials included · August 12–13 in Frisco, TX
+          Only 40 seats · Lunch & materials included · October 21–22 in Frisco, TX
         </p>
       </div>
     </section>

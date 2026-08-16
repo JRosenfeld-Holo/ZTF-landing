@@ -7,7 +7,7 @@ const forList = [
   'You have zero to basic AI experience',
   'You learn better in person than from online courses',
   'You want to apply AI to YOUR specific business problems',
-  "You're in DFW and can attend August 12–13 in Frisco",
+  "You're in DFW and can attend October 21–22 in Frisco",
   "You're ready to invest in learning that pays dividends immediately",
 ]
 

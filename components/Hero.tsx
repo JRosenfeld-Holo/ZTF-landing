@@ -5,7 +5,7 @@ import NebulaCanvas from './NebulaCanvas'
 const PHRASES = [
   'in 2 Days.',
   'without Code.',
-  'starting August 12.',
+  'starting October 21.',
   'in Frisco, TX.',
 ]
 
@@ -63,7 +63,7 @@ function CountUp({ target, duration = 1200 }: { target: number; duration?: numbe
 }
 
 function Countdown() {
-  const target = new Date('2026-08-12T10:00:00-05:00').getTime()
+  const target = new Date('2026-10-21T10:00:00-05:00').getTime()
   const [time, setTime] = useState({ d: '--', h: '--', m: '--', s: '--' })
 
   useEffect(() => {
@@ -196,7 +196,7 @@ export default function Hero({ onOpenQuiz }: { onOpenQuiz: () => void }) {
         <div className="flex flex-wrap gap-x-3 sm:gap-x-6 gap-y-2 sm:gap-y-3 justify-center mb-10">
           {[
             { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l.93 2.86h3.01l-2.44 1.77.93 2.87L7 6.73l-2.43 1.77.93-2.87L3.06 3.86h3.01L7 1z" stroke="#3B82F6" strokeWidth="1.2" strokeLinejoin="round"/></svg>, label: 'Frisco, TX', hideOnMobile: false },
-            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="9" rx="1.5" stroke="#3B82F6" strokeWidth="1.2"/><path d="M5 2v2M9 2v2M2 6h10" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round"/></svg>, label: 'August 12–13, 2026', hideOnMobile: false },
+            { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="9" rx="1.5" stroke="#3B82F6" strokeWidth="1.2"/><path d="M5 2v2M9 2v2M2 6h10" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round"/></svg>, label: 'October 21–22, 2026', hideOnMobile: false },
             { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#3B82F6" strokeWidth="1.2"/><path d="M7 4v3.5l2 1.5" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round"/></svg>, label: '10am – 3:30pm', hideOnMobile: false },
             { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5h10M2 5v6a1 1 0 001 1h6a1 1 0 001-1V5M5 5V4a2 2 0 014 0v1" stroke="#3B82F6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, label: 'Lunch Included', hideOnMobile: true },
             { icon: <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l.93 2.86h3.01l-2.44 1.77.93 2.87L7 6.73l-2.43 1.77.93-2.87L3.06 3.86h3.01L7 1z" stroke="#3B82F6" strokeWidth="1.2" strokeLinejoin="round"/></svg>, label: 'Only 40 Seats', hideOnMobile: false },

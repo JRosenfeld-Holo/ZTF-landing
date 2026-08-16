@@ -20,7 +20,7 @@ const steps = [
   {
     num: '03',
     label: 'Attend the Workshop',
-    sub: 'August 12–13 in Frisco',
+    sub: 'October 21–22 in Frisco',
     badge: { text: '2 days', variant: 'glass-badge--violet' },
     state: 'upcoming',
   },
